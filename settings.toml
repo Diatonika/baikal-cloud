@@ -1,0 +1,6 @@
+[default.baikal.cloud]
+
+local-data-dir = "data"
+local-worker-count = "16"
+cloud-url = "https://s3.gis-1.storage.selcloud.ru"
+cloud-bucket = "baikal-market-data"
