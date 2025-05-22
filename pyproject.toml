@@ -17,7 +17,9 @@ dependencies = [
     "attrs (>= 25.0, < 26.0)",
     "baikal-common (>= 0.0, < 1.0)",
     "boto3 (>= 1.0, < 2.0)",
-    "dynaconf (>= 3.0, < 4.0)"
+    "click (>= 8.0, < 9.0)",
+    "dynaconf (>= 3.0, < 4.0)",
+    "pydantic (>= 2.0, < 3.0)"
 ]
 
 [tool.poetry]
@@ -60,7 +62,6 @@ url = "https://pypi.fury.io/zitrasa/"
 # Dependency Groups
 
 [tool.poetry.group.dev.dependencies]
-click = "^8.0"
 python-semantic-release = "^9.0"
 rust-just = "^1.0"
 
