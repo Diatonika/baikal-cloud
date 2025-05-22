@@ -11,14 +11,22 @@ readme = "README.md"
 requires-python = ">= 3.12, < 4.0"
 
 dependencies = [
+    "aiofiles (>= 24.0, < 25.0)",
+    "aioboto3 (>= 14.0, < 15.0)",
     "aiobotocore (>= 2.0, < 3.0)",
+    "attrs (>= 25.0, < 26.0)",
     "baikal-common (>= 0.0, < 1.0)",
+    "boto3 (>= 1.0, < 2.0)",
     "dynaconf (>= 3.0, < 4.0)"
 ]
 
 [tool.poetry]
+exclude = [
+    "src/baikal/*.py"  # Explicitly exclude all python files from baikal namespace package
+]
+
 packages = [
-    { include = "cloud", from = "src", to = "baikal" }
+    { include = "baikal", from = "src" }
 ]
 
 [tool.poetry.dependencies]
@@ -60,7 +68,10 @@ rust-just = "^1.0"
 mypy = "^1.0"
 ruff = "^0.9"
 
-types-aiobotocore = { version = "^2.0", extras = ["essential"] }
+types-aiobotocore = { version = "^2.0", extras = ["essential", "s3"] }
+types-aioboto3 = { version = "^14.0", extras = ["essential", "s3"] }
+types-aiofiles = { version = "^24.0" }
+types-boto3 = { version = "^1.0", extras = ["essential", "s3"] }
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0"
@@ -82,6 +93,8 @@ lines-between-types = 1
 
 [tool.mypy]
 exclude = [".venv"]
+explicit_package_bases = true
+mypy_path = "src"
 python_version = "3.12"
 strict = true
 
