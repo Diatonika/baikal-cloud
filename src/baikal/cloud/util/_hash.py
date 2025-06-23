@@ -10,11 +10,11 @@ from aiofiles.threadpool.binary import AsyncBufferedReader
 from botocore.exceptions import ClientError
 from types_aiobotocore_s3 import S3Client
 
-from baikal.common.system import is_file_exist
+from baikal.common.system import FileSystemUtil
 
 
 async def local_sha256(path: Path, chunk_size: int = 4096) -> str:
-    if not is_file_exist(path):
+    if not FileSystemUtil.is_file_exist(path):
         return ""
 
     sha256_hash = hashlib.sha256()

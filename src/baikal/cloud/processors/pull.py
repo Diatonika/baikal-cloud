@@ -7,7 +7,7 @@ from baikal.cloud.context import (
     WorkerContext,
 )
 from baikal.cloud.processors._callback_factory import callback_factory
-from baikal.common.system import remove_path
+from baikal.common.system import FileSystemUtil
 
 
 async def pull_processor(
@@ -19,7 +19,7 @@ async def pull_processor(
     local_info = processor_context.local_info
 
     if cloud_info is None and local_info is not None:
-        remove_path(local_info.path)
+        FileSystemUtil.remove_path(local_info.path)
         progress_tracker.update_status(f"removed 0x{local_info.sha256[:12]}")
 
         return
