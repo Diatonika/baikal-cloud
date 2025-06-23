@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.0 (2025-06-23)
+
+### Refactoring
+
+- Transit to baikal-common 0.8 ([#2](https://github.com/Diatonika/baikal-cloud/pull/2),
+  [`81c33c8`](https://github.com/Diatonika/baikal-cloud/commit/81c33c806ac1805855d15cd8453d1c5cc228b9e2))
+
+
 ## v0.2.0 (2025-05-22)
 
 ### Features
